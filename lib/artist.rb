@@ -23,9 +23,7 @@ class Artist
   end
 
   def self.create #create a new artist instance
-    artist = Artist.new(name)
-    artist.save
-    artist
+    self.new(name).tap {|artist| artist.save}
   end
 
   def self.find_by_name(name) #finds an artist instance by name 
